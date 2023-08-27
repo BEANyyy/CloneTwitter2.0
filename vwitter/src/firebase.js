@@ -1,13 +1,16 @@
-import { initializeApp } from "firebase/app";
+// script 기준으로 입력해야 됨.
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBU7w-3VGKnowh0O0TD-BkWE1fZbUZgIwA",
-  authDomain: "vwitter2-61b3a.firebaseapp.com",
-  projectId: "vwitter2-61b3a",
-  storageBucket: "vwitter2-61b3a.appspot.com",
-  messagingSenderId: "336088546660",
-  appId: "1:336088546660:web:c26d6fde3a04ad15760e71",
-  measurementId: "G-DTHEZYE8J5"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-export default initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+export default app;
